@@ -32,6 +32,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
+  
+  map.resources :searches, :only => [:new, :create, :show]
 
-  map.root :controller => 'high_voltage/pages', :action => 'show', :id => 'root'
+  map.root :controller => 'searches', :action => 'new'
 end
