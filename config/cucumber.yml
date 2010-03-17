@@ -1,0 +1,6 @@
+<%
+format_opts = ENV['CUCUMBER_FORMAT'] || 'progress features'
+std_opts = "--format #{format_opts} --strict --tags ~@wip"
+%>
+default: <%= std_opts %>
+wip: --tags @wip:3 --wip features
