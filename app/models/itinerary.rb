@@ -14,6 +14,13 @@ class Itinerary
   end
   
   def self.from_hash(hsh)
-    new :airline => hsh['legs']['leg']['airline_display'], :raw => hsh, :segments => hsh['legs']['leg']['segment'].map { |s| Segment.from_hash s }, :id => hsh['id'], :time => hsh['dt']
+    leg = hsh['legs']['leg']
+    segments = case leg['segment']
+    when Hash
+      [Segment.from_hash(leg['segment'])]
+    when Array
+      leg['segment'].map { |s| Segment.from_hash s }
+    end
+    new :airline => leg['airline_display'], :raw => hsh, :segments => segments, :id => hsh['id'], :time => hsh['dt']
   end
 end

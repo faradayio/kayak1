@@ -1,1 +1,1 @@
-<%= itinerary.airline %> kid <%= itinerary.id %> (<%= itinerary.nodes.join '-' %> at <%= itinerary.time %>): <%=number_with_delimiter itinerary.segments.sum(&:emission).round %> kg CO2e
+<%= itinerary.airline %> kid <%= itinerary.id %> (<%= itinerary.nodes.join '-' %>): <%=number_with_delimiter itinerary.segments.sum(&:emission).round %> kg CO2e
