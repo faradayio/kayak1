@@ -4,16 +4,11 @@ class SearchesController < ApplicationController
   end
   
   def create
-    @search = Search.new params[:search]
-    if @search.save
-      redirect_to @search
-    else
-      flash[:notice] = 'There was a problem with your search'
-      render :action => :new
-    end
-  end
-  
-  def show
-    @search = Search.find params[:id]
+    @search = Search.new params.symbolize_keys.slice(:origin_airport, :destination_airport)
+    logger.info @search.inspect
+    @search.perform!
+    logger.info "Sleeping"
+    sleep 10
+    render :text => @search.itineraries.body, :format => :xml
   end
 end

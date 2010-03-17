@@ -9,13 +9,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100316220155) do
-
-  create_table "searches", :force => true do |t|
-    t.string   "origin_airport"
-    t.string   "destination_airport"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20100317010307) do
 
 end

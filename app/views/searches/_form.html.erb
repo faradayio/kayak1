@@ -1,5 +1,5 @@
-<% form_for search do |f| %>
-<p><%= f.label :origin_airport %><%= f.text_field :origin_airport %></p>
-<p><%= f.label :destination_airport %><%= f.text_field :destination_airport %></p>
+<% form_tag :controller => :searches, :action => :create do %>
+<p><%= text_field_tag :origin_airport %></p>
+<p><%= text_field_tag :destination_airport %></p>
 <p><%= submit_tag %></p>
 <% end %>
