@@ -7,18 +7,12 @@ class Search < Weary::Base
   end
   
   def perform!
-    Rails.logger.info "FETCHING SESSION"
     kayak_session = session(:token => KAYAK_DEVELOPER_KEY).perform
     @session_id = kayak_session.parse['ident']['sid']
-    Rails.logger.info "SESSION ID: #{@session_id}"
-    Rails.logger.info "POSTING SEARCH"
     kayak_search_request = search(self.class.defaults.merge(:origin => origin_airport, :destination => destination_airport, :_sid_ => session_id))
-    Rails.logger.info kayak_search_request.inspect
     kayak_search = kayak_search_request.perform
-    Rails.logger.info kayak_search.inspect
     @search_id = kayak_search.parse['search']['searchid']
     @cluster_cookie = kayak_search.header["set-cookie"].find { |c| c.match(/^cluster/)}
-    Rails.logger.info "SEARCH ID: #{@search_id}"
   end
   
   post :session do |resource|
