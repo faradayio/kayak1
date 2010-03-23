@@ -4,8 +4,8 @@ class SearchesController < ApplicationController
   end
   
   def create
-    @search = Search.new(params.symbolize_keys.slice(:origin_airport, :destination_airport)).tap(&:perform!)
-    sleep 3
+    @search = Search.new(params.symbolize_keys.slice(:origin_airport, :destination_airport, :date)).tap(&:perform!)
+    sleep 1
     @itineraries = @search.itineraries.parse['searchresult']['trips']['trip'].map { |t| Itinerary.from_hash t }
     render :action => :show
   end

@@ -1,15 +1,16 @@
 class Search < Weary::Base
-  attr_reader :origin_airport, :destination_airport, :search_id, :session_id
+  attr_reader :origin_airport, :destination_airport, :search_id, :session_id, :date
   
   def initialize(options = {})
     @origin_airport = options[:origin_airport]
     @destination_airport = options[:destination_airport]
+    @date = options[:date] ? Date.parse(options[:date]) : Date.today.tomorrow.tomorrow
   end
   
   def perform!
     kayak_session = session(:token => KAYAK_DEVELOPER_KEY).perform
     @session_id = kayak_session.parse['ident']['sid']
-    kayak_search_request = search(self.class.defaults.merge(:origin => origin_airport, :destination => destination_airport, :_sid_ => session_id))
+    kayak_search_request = search(self.class.defaults.merge(:origin => origin_airport, :destination => destination_airport, :_sid_ => session_id, :depart_date => date.strftime('%m/%d/%Y')))
     kayak_search = kayak_search_request.perform
     @search_id = kayak_search.parse['search']['searchid']
     @cluster_cookie = kayak_search.header["set-cookie"].find { |c| c.match(/^cluster/)}
@@ -36,7 +37,7 @@ class Search < Weary::Base
   end
   
   def self.defaults
-    { :basicmode => true, :oneway => 'y', :depart_date => Date.today.tomorrow.tomorrow.strftime('%m/%d/%Y'), :depart_time => 'a', :travelers => 1, :cabin => 'e', :action => 'doFlights', :apimode => 1, :c => 5, :m => 'normal', :d => 'up', :s => 'price', :version => 1 }
+    { :basicmode => true, :oneway => 'y', :depart_time => 'a', :travelers => 1, :cabin => 'e', :action => 'doFlights', :apimode => 1, :c => 5, :m => 'normal', :d => 'up', :s => 'price', :version => 1 }
   end
   
 end

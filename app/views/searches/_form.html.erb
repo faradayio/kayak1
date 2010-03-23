@@ -1,5 +1,6 @@
 <% form_tag :controller => :searches, :action => :create do %>
-<p><%= text_field_tag :origin_airport %></p>
-<p><%= text_field_tag :destination_airport %></p>
+<p><%= text_field_tag :origin_airport %> origin</p>
+<p><%= text_field_tag :destination_airport %> destination</p>
+<p><%= text_field_tag :date %> date (mm/dd/yyyy)</p>
 <p><%= submit_tag %></p>
 <% end %>
