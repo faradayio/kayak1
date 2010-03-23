@@ -1,26 +1,36 @@
 class Itinerary
-  attr_reader :airline, :raw, :segments, :id, :time
+  attr_reader :segments, :price, :url, :airline_code, :airline_name, :start, :end, :stops, :duration
   
   def initialize(options = {})
-    @airline = options[:airline]
-    @raw = options[:raw]
     @segments = options[:segments]
     @id = options[:id]
     @time = options[:time]
+    @airline_code = options[:airline_code]
+    @airline_name = options[:airline_name]
+    @start = options[:start]
+    @end = options[:end]
+    @duration = options[:duration]
+    
   end
   
   def nodes
     segments.map { |s| [ s.origin_airport, s.destination_airport ] }.flatten.uniq
   end
   
-  def self.from_hash(hsh)
-    leg = hsh['legs']['leg']
-    segments = case leg['segment']
-    when Hash
-      [Segment.from_hash(leg['segment'])]
-    when Array
-      leg['segment'].map { |s| Segment.from_hash s }
-    end
-    new :airline => leg['airline_display'], :raw => hsh, :segments => segments, :id => hsh['id'], :time => hsh['dt']
+  def self.from_node(node)
+    itinerary = {}
+    itinerary[:url] = node.at('price').attribute('url').value
+    itinerary[:price] = node.at('price').content
+    itinerary[:segments] = node.css('legs leg').map { |n| Segment.from_node n }
+
+    leg = node.at('legs leg')
+    itinerary[:airline_code] = leg.at('airline').content
+    itinerary[:airline_name] = leg.at('airline_display').content
+    itinerary[:start] = DateTime.parse leg.at('depart').content
+    itinerary[:end] = DateTime.parse leg.at('arrive').content
+    itinerary[:stops] = leg.at('stops').content.to_i
+    itinerary[:duration] = leg.at('duration_minutes').content.to_f
+    
+    new itinerary
   end
 end

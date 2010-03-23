@@ -1,1 +1,8 @@
-<%= itinerary.airline %> kid <%= itinerary.id %> (<%= itinerary.nodes.join '-' %>): <%=number_with_delimiter itinerary.segments.sum(&:emission).round %> kg CO2e
+<dl class="itinerary">
+  <dt>Price</dt>
+  <dd><%= itinerary.price %></dd>
+  <dt>Emission</dt>
+  <dd><%=number_with_delimiter itinerary.segments.sum(&:emission).round %> kg CO2e</dd>
+  <dt>Airline</dt>
+  <dd><%= itinerary.airline_name %></dd>
+</dl>
