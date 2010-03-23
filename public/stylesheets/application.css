@@ -1,4 +1,4 @@
-p, h1, h2, h3, h4, h5, h6, ol, ul, li, dl, dt, dd, input, table, td, th {
+p, h1, h2, h3, h4, h5, h6, ol, ul, li, dl, dt, dd, input, table, td, th, fieldset {
   margin: 0;
   padding: 0;
   font-weight: normal;
@@ -27,10 +27,13 @@ p, h1, h2, h3, h4, h5, h6, ol, ul, li, dl, dt, dd, input, table, td, th {
 /* ---------- */
 
 body {
-  font-family: "Brighter Planet", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   margin: 0;
   font-size: 12px;
   line-height: 1.6;
+}
+
+body, input {
+  font-family: "Brighter Planet", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 }
 
 h1 {
@@ -41,3 +44,177 @@ h1 {
   color: white;
   font-size: 36px;
 }
+
+#content {
+  padding: 0 40px;
+}
+
+p.intro {
+  font-size: 16px;
+  color: #999;
+  margin: 20px 0;
+}
+
+p.intro a {
+  color: inherit;
+}
+
+form fieldset {
+  border: none;
+}
+
+form fieldset legend {
+  display: none;
+}
+
+form fieldset dl {
+  overflow: auto;
+}
+
+form fieldset dl dt {
+  padding: 20px 10px 0 0;
+  padding-right: 10px;
+  font-size: 11px;
+  width: 150px;
+  position: absolute;
+}
+
+form fieldset dl dt.label, form fieldset dl dt label {
+  display: block;
+  font-size: 14px;
+}
+
+form fieldset dl dd {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  display: block;
+  padding-left: 160px;
+  min-height: 30px;
+  overflow: auto;
+}
+
+form fieldset dl dd input[type=text], form fieldset dl dd input[type=password], form fieldset dl dd textarea {
+  width: 120px;
+  font-size: 16px;
+  padding: 5px;
+  float: left;
+  border: 1px solid silver;
+  border-right-color: #eee;
+  border-bottom-color: #eee;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  -moz-box-shadow: 1px 1px 0 silver;
+}
+
+form fieldset dl dd input:focus {
+  border-right-color: silver;
+  border-bottom-color: silver;
+  -moz-box-shadow: 0 0 5px silver;
+  background: #f9f9f9;
+}
+
+form fieldset dl dd input[type=file] {
+  width: 448px;
+  float: left;
+}
+
+form fieldset dl dd.airport input[type=text] {
+  max-width: 100px;
+}
+
+form fieldset dl dd p.assistance {
+  color: gray;
+  font-size: 11px;
+  margin: 0 0 0 150px;
+}
+
+form fieldset dl dd p.assistance a {
+  color: inherit;
+}
+
+form fieldset input[type=submit] {
+  background: gray;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 3px 12px;
+  line-height: 2.5;
+  text-shadow: black 0 1px 0;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border-top: 1px solid rgba(255,255,255,.5);
+  border-left: 1px solid rgba(255,255,255,.5);
+  border-right: 1px solid rgba(0,0,0,.5);
+  border-bottom: 1px solid rgba(0,0,0,.5);
+  background-image: 
+    -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, rgb(100,100,100)),
+      color-stop(1, rgb(200,200,200))
+    );
+  background-image:
+    -moz-linear-gradient(
+      bottom,
+      rgb(100,100,100) 0%,
+      rgb(200,200,200) 100%
+    );
+  margin: 20px 0 20px 160px;
+}
+form fieldset input[type=submit]:hover {
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+form fieldset input[type=submit]:active {
+  text-shadow: black 0 -1px 0;
+  border-top-color: rgba(0,0,0,.5);
+  border-left-color: rgba(0,0,0,.5);
+  border-right-color: rgba(255,255,255,.5);
+  border-bottom-color: rgba(255,255,255,.5);
+}
+
+form fieldset dl dd textarea {
+  height: 150px;
+}
+
+form fieldset .errorExplanation {
+  margin: 20px;
+  border: 1px solid gray;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #FFE430;
+  padding: 0 0 10px 0;
+  -moz-box-shadow: 1px 1px 0 #eee;
+  -webkit-box-shadow: 1px 1px 0 #eee;
+  box-shadow: 1px 1px 0 #eee;
+}
+
+form fieldset .errorExplanation h2 {
+  font-weight: normal;
+  font-size: 14px;
+  color: black;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+
+form fieldset .errorExplanation p {
+  margin: 10px;
+}
+
+form fieldset .errorExplanation ul {
+  margin: 0 0 0 10px;
+  padding-left: 1em;
+}
+
+fieldset.with_email_errors dl dd.email input,
+fieldset.with_password_errors dl dd.password input,
+fieldset.with_handle_errors dl dd.handle input
+{
+  background: #FFE430;
+}
+
+
