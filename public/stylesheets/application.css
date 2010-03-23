@@ -1,0 +1,43 @@
+p, h1, h2, h3, h4, h5, h6, ol, ul, li, dl, dt, dd, input, table, td, th {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+
+/*------------*/
+
+
+@font-face {
+  font-family: 'Brighter Planet';
+  src: url('fonts/KievitWebPro.eot');
+  src: local('☺'), url("fonts/KievitWebPro.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Handsome';
+  src: url('fonts/HandsomePro-Thin.eot');
+  src: local('☺'), url("fonts/HandsomePro-Thin.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---------- */
+
+body {
+  font-family: "Brighter Planet", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: Handsome;
+  text-transform: lowercase;
+  background: #96CFEA;
+  padding: 20px 40px;
+  color: white;
+  font-size: 36px;
+}
