@@ -16,7 +16,7 @@ class Segment < Weary::Base
   def emission
     calculate(:'flight[origin_airport]' => { :iata_code => origin_airport },
               :'flight[destination_airport]' => { :iata_code => destination_airport },
-              :'flight[airline]' => { :iata_code => airline_code },
+              :'flight[airline]' => { :iata => airline_code },
               :'flight[emplanements_per_trip]' => 1,
               :'flight[trips]' => 1
               ).perform.parse.symbolize_keys[:emission]
