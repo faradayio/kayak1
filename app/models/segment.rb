@@ -1,5 +1,5 @@
 class Segment < Weary::Base
-  attr_reader :origin_airport, :destination_airport, :aircraft, :airline_code
+  attr_reader :origin_airport, :destination_airport, :aircraft, :airline_code, :calculation
   
   def initialize(options = {})
     @origin_airport = options[:origin_airport]
@@ -14,12 +14,22 @@ class Segment < Weary::Base
   end
   
   def emission
-    calculate(:'flight[origin_airport]' => { :iata_code => origin_airport },
+    calculate!
+    calculation[:emission]
+  end
+  
+  def methodology
+    calculate!
+    calculation[:methodology]
+  end
+  
+  def calculate!
+    @calculation ||= calculate(:'flight[origin_airport]' => { :iata_code => origin_airport },
               :'flight[destination_airport]' => { :iata_code => destination_airport },
               :'flight[airline]' => { :iata => airline_code },
               :'flight[emplanements_per_trip]' => 1,
               :'flight[trips]' => 1
-              ).perform.parse.symbolize_keys[:emission]
+              ).perform.parse.symbolize_keys
   end
   
   def self.from_node(node)
