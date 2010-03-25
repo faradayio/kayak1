@@ -3,15 +3,15 @@
     <legend>Trip details</legend>
     <dl>
       <dt class="origin_airport"><label for="origin_airport">Starting airport code</label></dt>
-      <dd class="airport origin_airport"><%= text_field_tag :origin_airport %></dd>
+      <dd class="airport origin_airport"><%= text_field_tag :origin_airport, :tabindex => 1 %></dd>
       <dt class="destination_airport"><label for="destination_airport">Ending airport code</label></dt>
-      <dd class="destination_airport airport"><%= text_field_tag :destination_airport %></dd>
+      <dd class="destination_airport airport"><%= text_field_tag :destination_airport, :tabindex => 2 %></dd>
       <dt class="date"><label for="date">Date</label></dt>
       <dd class="date">
-        <%= text_field_tag :date %>
+        <%= text_field_tag :date, :tabindex => 3 %>
         <p class="assistance">mm/dd/yyyy</p>
       </dd>
     </dl>
-    <p><%= submit_tag 'Search' %></p>
+    <p><%= submit_tag 'Search', :tabindex => 4 %></p>
   </fieldset>
 <% end %>
