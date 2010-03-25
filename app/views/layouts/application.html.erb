@@ -3,13 +3,15 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Language" content="en" />
-  <title><%= @title %></title>
+  <title><%= @title ? "#{@title} [Careplane]" : 'Careplane' %></title>
   <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'prototype' %>
 </head>
 <body>
   <h1>Careplane</h1>
   <div id="content">
   <%= yield :layout %>
   </div>
+  <%= yield :bottom %>
 </body>
 </html>

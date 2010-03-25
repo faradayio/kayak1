@@ -70,13 +70,24 @@ ol.itineraries {
 ol.itineraries>li {
   border: 1px solid #ccc;
   -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   margin: 0 0 20px 0;
+}
+
+ol.itineraries>li.best {
+  border-color: #ABCE84;
 }
 
 ol.itineraries>li dl {
   overflow: auto;
   background: #eee;
   border-bottom: 1px solid #ccc;
+}
+
+ol.itineraries>li.best dl {
+  background: #C2EA96;
+  border-color: #ABCE84;
 }
 
 ol.itineraries>li dl dt {
@@ -86,6 +97,10 @@ ol.itineraries>li dl dt {
 ol.itineraries>li dl dd {
   padding: 10px;
   min-height: 25px;
+}
+
+ol.itineraries>li.best dl dd {
+  border-color: #ABCE84 !important;
 }
 
 ol.itineraries>li dl dd.price {
@@ -149,6 +164,10 @@ ol.itineraries>li ol.segments {
 ol.itineraries>li ol.segments li {
   padding: 5px 10px;
   border-bottom: 1px solid #eee;
+}
+
+ol.itineraries>li.best ol.segments li {
+  border-color: #C2EA96;
 }
 
 ol.itineraries>li ol.segments li .emission {

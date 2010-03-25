@@ -3,3 +3,37 @@
 <%= render :partial => 'itineraries/ol', :locals => { :itineraries => @itineraries } %>
 
 <p><%= link_to 'Start over', new_search_path %></p>
+
+<% content_for :bottom do %>
+<script type="text/javascript">
+document.observe('dom:loaded', markBest);
+
+function markBest() {
+  firstItinerary = $$('ol.itineraries>li').first();
+  lowestPrice = Number(firstItinerary.down('dd.price a').innerHTML);
+  cheapestItinerary = $$('ol.itineraries>li').select(function(itinerary) {
+    return Number(itinerary.down('dd.price a').innerHTML) == lowestPrice;
+  }).sortBy(function(itinerary) {
+    return Number(itinerary.down('dd.emission strong').innerHTML.gsub(/[^0-9\.]/, ''));
+  }).first();
+  cheapestFootprint = Number(cheapestItinerary.down('dd.emission strong').innerHTML.gsub(/[^0-9\.]/, ''));
+  lowestFootprint = $$('ol.itineraries>li').min( function(itinerary) { return Number(itinerary.down('dd.emission strong').innerHTML.gsub(/[^0-9\.]/, '')); });
+  if (cheapestFootprint == lowestFootprint) {
+    highlightAsBest(cheapestItinerary);
+  } else {
+    bestItinerary = $$('ol.itineraries>li').reject( function(itinerary) {
+      Number(itinerary.down('dd.price a').innerHTML) == lowestPrice;
+    }).sortBy( function(itinerary) {
+      footprintSavings = cheapestFootprint - Number(itinerary.down('dd.emission strong').innerHTML.gsub(/[^0-9\.]/, ''));
+      additionalCost = Number(itinerary.down('dd.price a').innerHTML) - lowestPrice;
+      return (footprintSavings / additionalCost) ;
+    }).last();
+    highlightAsBest(bestItinerary);
+  }
+}
+
+function highlightAsBest(el) {
+  el.addClassName('best');
+}
+</script>
+<% end %>
