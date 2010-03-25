@@ -85,7 +85,7 @@ ol.itineraries>li dl dt {
 
 ol.itineraries>li dl dd {
   padding: 10px;
-  min-height: 20px;
+  min-height: 25px;
 }
 
 ol.itineraries>li dl dd.price {
@@ -111,6 +111,12 @@ ol.itineraries>li dl dd.emission {
   border-right: 1px solid #ccc;
 }
 
+ol.itineraries>li dl dd.emission strong {
+  font-size: 14px;
+  line-height: 17px;
+  color: #333;
+}
+
 ol.itineraries>li dl dd.airline {
   float: left;
   width: 150px;
@@ -119,6 +125,7 @@ ol.itineraries>li dl dd.airline {
 
 ol.itineraries>li dl dd.airline img {
   vertical-align: middle;
+  border: 1px solid #ccc;
 }
 
 ol.itineraries>li dl dd.stops {
@@ -131,17 +138,57 @@ ol.itineraries>li dl dd.segmentation {
 }
 
 ol.itineraries>li dl dd.cost {
-  float: right;
-  width: 80px;
-  border-left: 1px solid #eee;
-  text-align:right;
+  display: none;
 }
 
 ol.itineraries>li ol.segments {
   list-style: none;
   clear: both;
-  padding: 10px;
 }
+
+ol.itineraries>li ol.segments li {
+  padding: 5px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+ol.itineraries>li ol.segments li .emission {
+  float: left;
+  width: 50px;
+  color: gray;
+}
+
+ol.itineraries>li ol.segments li .origin {
+  float: left;
+  width: 50px;
+}
+
+ol.itineraries>li ol.segments li .aircraft {
+  color: gray;
+  padding-left: 10px;
+}
+
+ol.itineraries>li ol.segments li .aircraft:before {
+  content: "\2708";
+  font-size: 16px;
+  line-height: 16px;
+}
+
+ol.itineraries>li ol.segments li a {
+  float: right;
+  display: block;
+  width: 100px;
+  color: inherit;
+  font-size: 9px;
+  text-transform: uppercase;
+  text-align: right;
+  color: gray;
+}
+
+ol.itineraries>li ol.segments li+li .origin {             padding-left: 50px; }
+ol.itineraries>li ol.segments li+li+li .origin {          padding-left: 100px; }
+ol.itineraries>li ol.segments li+li+li+li .origin {       padding-left: 150px; }
+ol.itineraries>li ol.segments li+li+li+li+li .origin {    padding-left: 200px; }
+ol.itineraries>li ol.segments li+li+li+li+li+li .origin { padding-left: 250px; }
 
 form fieldset {
   border: none;

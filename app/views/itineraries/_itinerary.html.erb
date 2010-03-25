@@ -4,10 +4,10 @@
   <dt>Price</dt>
   <dd class="price currency"><%= link_to_itinerary_price itinerary %></dd>
   <dt>Emission</dt>
-  <dd class="emission"><%=number_with_delimiter itinerary.emission.round %> kg CO2e</dd>
+  <dd class="emission"><strong><%=number_with_delimiter itinerary.emission.round %> kg</strong> CO2e</dd>
   <dt>Airline</dt>
   <dd class="airline"><%= airline_image_tag itinerary.airline_code %> <%= itinerary.airline_name %></dd>
   <dt>Stops</dt>
-  <dd class="stops"><%=pluralize itinerary.stops, 'stop' %><%= intermediation itinerary %></dd>
+  <dd class="stops"><%= intermediation itinerary %></dd>
 </dl>
 <%= render :partial => 'segments/ol', :locals => { :segments => itinerary.segments } %>

@@ -1,1 +1,1 @@
-<%= segment.origin_airport %> to <%= segment.destination_airport %> on a <%= segment.airline_code %> <%= segment.aircraft %> (<%= link_to 'methodology', segment.methodology %>) 
+<span class="emission"><%=number_with_delimiter segment.emission %> kg</span> <span class="origin"><%= segment.origin_airport %> to </span><%= segment.destination_airport %> <span class="aircraft"><%= segment.aircraft %></span> <%= link_to 'Methodology', segment.methodology %> 

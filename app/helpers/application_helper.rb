@@ -5,8 +5,11 @@ module ApplicationHelper
   
   def intermediation(itinerary)
     airports = itinerary.nodes
-    return if airports.tap(&:pop).tap(&:shift).empty?
-    " (via #{ airports.to_sentence})"
+    if airports.tap(&:pop).tap(&:shift).empty?
+      "non-stop"
+    else
+      "#{pluralize airports.length, 'stop'} (via #{ airports.to_sentence})"
+    end
   end
   
   def link_to_itinerary_price(itinerary)
