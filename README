@@ -2,3 +2,7 @@ First-time setup:
 
 $ git submodule init
 $ git submodule update
+
+Running dry:
+
+$ FAKE=true mongrel_rails start -d    # uses locally-stored fake data (doc/kayak_response.xml) and emission numbers (1234)
