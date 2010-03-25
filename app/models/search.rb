@@ -37,7 +37,7 @@ class Search < Weary::Base
   end
   
   def self.defaults
-    { :basicmode => true, :oneway => 'y', :depart_time => 'a', :travelers => 1, :cabin => 'e', :action => 'doFlights', :apimode => 1, :c => 5, :m => 'normal', :d => 'up', :s => 'price', :version => 1 }
+    { :basicmode => true, :oneway => 'y', :depart_time => 'a', :travelers => 1, :cabin => 'e', :action => 'doFlights', :apimode => 1, :c => RESULTS_TO_FETCH, :m => 'normal', :d => 'up', :s => 'price', :version => 1 }
   end
   
 end
