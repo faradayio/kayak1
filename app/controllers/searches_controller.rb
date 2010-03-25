@@ -12,7 +12,7 @@ class SearchesController < ApplicationController
       sleep 3
       xml = @search.itineraries.body
     end
-    @itineraries = Nokogiri::XML(xml).css('searchresult trips trip').to_a.map { |node| Itinerary.from_node node }[0..5]
+    @itineraries = Nokogiri::XML(xml).css('searchresult trips trip').to_a.map { |node| Itinerary.from_node node }[0..10]
     render :action => :show
   end
 end
