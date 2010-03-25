@@ -14,13 +14,21 @@ class Segment < Weary::Base
   end
   
   def emission
-    calculate!
-    calculation[:emission]
+    if ENV['FAKE'] == 'true'
+      1234
+    else
+      calculate!
+      calculation[:emission]
+    end
   end
   
   def methodology
-    calculate!
-    calculation[:methodology]
+    if ENV['FAKE'] == 'true'
+      '#'
+    else
+      calculate!
+      calculation[:methodology]
+    end
   end
   
   def calculate!

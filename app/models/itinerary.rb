@@ -27,7 +27,7 @@ class Itinerary
   def self.from_node(node)
     itinerary = {}
     itinerary[:url] = node.at('price').attribute('url').value
-    itinerary[:price] = node.at('price').content
+    itinerary[:price] = node.at('price').content.sub('$', '')
 
     leg = node.at('legs leg')
     itinerary[:segments] = leg.css('segment').map { |n| Segment.from_node n }
