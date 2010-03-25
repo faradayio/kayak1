@@ -9,6 +9,5 @@
   <dd class="airline"><%= airline_image_tag itinerary.airline_code %> <%= itinerary.airline_name %></dd>
   <dt>Stops</dt>
   <dd class="stops"><%=pluralize itinerary.stops, 'stop' %><%= intermediation itinerary %></dd>
-  <dt>Segments</dt>
-  <dd class="segmentation"><%= render :partial => 'segments/ol', :locals => { :segments => itinerary.segments } %></dd>
 </dl>
+<%= render :partial => 'segments/ol', :locals => { :segments => itinerary.segments } %>

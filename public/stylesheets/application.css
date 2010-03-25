@@ -123,8 +123,10 @@ ol.itineraries>li dl dd.cost {
   border-left: 1px solid #eee;
 }
 
-ol ol {
-  margin: 0 0 0 20px;
+ol.itineraries>li ol.segments {
+  list-style: none;
+  clear: both;
+  padding: 10px;
 }
 
 form fieldset {
