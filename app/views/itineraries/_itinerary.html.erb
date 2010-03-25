@@ -5,6 +5,8 @@
   <dd class="emission"><%=number_with_delimiter itinerary.segments.sum(&:emission).round %> kg CO2e</dd>
   <dt>Airline</dt>
   <dd class="airline"><%= airline_image_tag itinerary.airline_code %> <%= itinerary.airline_name %></dd>
+  <dt>Stops</dt>
+  <dd class="stops"><%=pluralize itinerary.stops, 'stop' %><%= intermediation itinerary %></dd>
   <dt>Segments</dt>
-  <dd class="segmentaion"><%= render :partial => 'segments/ol', :locals => { :segments => itinerary.segments } %></dd>
+  <dd class="segmentation"><%= render :partial => 'segments/ol', :locals => { :segments => itinerary.segments } %></dd>
 </dl>

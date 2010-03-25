@@ -11,6 +11,7 @@ class Itinerary
     @end = options[:end]
     @duration = options[:duration]
     @price = options[:price]
+    @stops = options[:stops]
     
   end
   

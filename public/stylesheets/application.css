@@ -99,6 +99,16 @@ ol.itineraries>li dl dd.airline {
   border-right: 1px solid #eee;
 }
 
+ol.itineraries>li dl dd.stops {
+  float: left;
+  width: 150px;
+  border-right: 1px solid #eee;
+}
+
+ol.itineraries>li dl dd.segmentation {
+  display: none;
+}
+
 ol ol {
   margin: 0 0 0 20px;
 }
