@@ -59,6 +59,46 @@ p.intro a {
   color: inherit;
 }
 
+ol.itineraries {
+  list-style: none;
+}
+
+ol.itineraries>li {
+  border: 1px solid #eee;
+  -moz-border-radius: 5px;
+  margin: 0 0 20px 0;
+}
+
+ol.itineraries>li dl {
+  overflow: auto;
+}
+
+ol.itineraries>li dl dt {
+  display: none;
+}
+
+ol.itineraries>li dl dd {
+  padding: 10px;
+}
+
+ol.itineraries>li dl dd.price {
+  float: left;
+  width: 80px;
+  border-right: 1px solid #eee;
+}
+
+ol.itineraries>li dl dd.emission {
+  float: left;
+  width: 100px;
+  border-right: 1px solid #eee;
+}
+
+ol.itineraries>li dl dd.airline {
+  float: left;
+  width: 150px;
+  border-right: 1px solid #eee;
+}
+
 ol ol {
   margin: 0 0 0 20px;
 }
