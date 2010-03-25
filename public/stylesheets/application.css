@@ -68,13 +68,15 @@ ol.itineraries {
 }
 
 ol.itineraries>li {
-  border: 1px solid #eee;
+  border: 1px solid #ccc;
   -moz-border-radius: 5px;
   margin: 0 0 20px 0;
 }
 
 ol.itineraries>li dl {
   overflow: auto;
+  background: #eee;
+  border-bottom: 1px solid #ccc;
 }
 
 ol.itineraries>li dl dt {
@@ -83,25 +85,36 @@ ol.itineraries>li dl dt {
 
 ol.itineraries>li dl dd {
   padding: 10px;
-  min-height: 40px;
+  min-height: 20px;
 }
 
 ol.itineraries>li dl dd.price {
   float: left;
   width: 80px;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #ccc;
+}
+
+ol.itineraries>li dl dd.price:before {
+  content: '$';
+  padding-right: 3px;
+}
+
+ol.itineraries>li dl dd.price a {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 ol.itineraries>li dl dd.emission {
   float: left;
   width: 100px;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #ccc;
 }
 
 ol.itineraries>li dl dd.airline {
   float: left;
   width: 150px;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #ccc;
 }
 
 ol.itineraries>li dl dd.airline img {
@@ -121,6 +134,7 @@ ol.itineraries>li dl dd.cost {
   float: right;
   width: 80px;
   border-left: 1px solid #eee;
+  text-align:right;
 }
 
 ol.itineraries>li ol.segments {
