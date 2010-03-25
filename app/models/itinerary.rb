@@ -10,6 +10,7 @@ class Itinerary
     @start = options[:start]
     @end = options[:end]
     @duration = options[:duration]
+    @price = options[:price]
     
   end
   
@@ -21,9 +22,9 @@ class Itinerary
     itinerary = {}
     itinerary[:url] = node.at('price').attribute('url').value
     itinerary[:price] = node.at('price').content
-    itinerary[:segments] = node.css('legs leg').map { |n| Segment.from_node n }
 
     leg = node.at('legs leg')
+    itinerary[:segments] = leg.css('segment').map { |n| Segment.from_node n }
     itinerary[:airline_code] = leg.at('airline').content
     itinerary[:airline_name] = leg.at('airline_display').content
     itinerary[:start] = DateTime.parse leg.at('depart').content

@@ -1,6 +1,5 @@
-<h1><%= @search.origin_airport %> to <%= @search.destination_airport %></h1>
+<h2><%= @search.origin_airport %> to <%= @search.destination_airport %></h2>
 
-<h2>Itineraries</h2>
 <%= render :partial => 'itineraries/ol', :locals => { :itineraries => @itineraries } %>
 
 <p><%= link_to 'Start over', new_search_path %></p>
