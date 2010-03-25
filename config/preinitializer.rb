@@ -31,5 +31,16 @@ unless defined?(PRIVATE_HOSTNAME)
     UNIVERSE = :developer
   end
 
-  load File.expand_path("#{RAILS_ROOT}/deploy/universes/#{UNIVERSE}.rb")
+  if File.readable?("#{RAILS_ROOT}/deploy/universes/#{UNIVERSE}.rb")
+    load File.expand_path("#{RAILS_ROOT}/deploy/universes/#{UNIVERSE}.rb")
+  else
+    # warning: keep these updated, i guess
+    SMTP_DELIVERY_METHOD = :test
+    SMTP_SETTINGS = {}
+    APP_SERVERS = %w{ localhost }
+    MYSQL_CMD = 'mysql -u root'
+    MYSQLDUMP_CMD = 'mysqldump -u root'
+    DEFAULT_HOST_WITH_PORT = 'kayak1.local'
+    CRON_LOG_DIR = '.'
+  end
 end
