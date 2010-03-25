@@ -12,11 +12,16 @@ class Itinerary
     @duration = options[:duration]
     @price = options[:price]
     @stops = options[:stops]
+    @url = options[:url]
     
   end
   
   def nodes
     segments.map { |s| [ s.origin_airport, s.destination_airport ] }.flatten.uniq
+  end
+  
+  def emission
+    segments.sum(&:emission)
   end
   
   def self.from_node(node)

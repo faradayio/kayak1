@@ -45,6 +45,10 @@ h1 {
   font-size: 36px;
 }
 
+h2 {
+  margin: 20px 0;
+}
+
 #content {
   padding: 0 40px;
 }
@@ -79,6 +83,7 @@ ol.itineraries>li dl dt {
 
 ol.itineraries>li dl dd {
   padding: 10px;
+  min-height: 40px;
 }
 
 ol.itineraries>li dl dd.price {
@@ -99,14 +104,23 @@ ol.itineraries>li dl dd.airline {
   border-right: 1px solid #eee;
 }
 
+ol.itineraries>li dl dd.airline img {
+  vertical-align: middle;
+}
+
 ol.itineraries>li dl dd.stops {
   float: left;
   width: 150px;
-  border-right: 1px solid #eee;
 }
 
 ol.itineraries>li dl dd.segmentation {
   display: none;
+}
+
+ol.itineraries>li dl dd.cost {
+  float: right;
+  width: 80px;
+  border-left: 1px solid #eee;
 }
 
 ol ol {
