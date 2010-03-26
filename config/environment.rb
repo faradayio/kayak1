@@ -20,9 +20,11 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   
-  config.gem 'weary'
-  config.gem 'crack'
-  config.gem 'nokogiri'
+  # config.gem 'ruby-hmac', :version => '0.4.0' # for weary
+  # config.gem 'oauth', :version => '0.3.6' # for weary
+  config.gem 'weary', :version => '0.7.2'
+  config.gem 'crack', :version => '0.1.7'
+  config.gem 'nokogiri', :version => '1.4.1'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
