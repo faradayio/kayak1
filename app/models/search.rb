@@ -5,7 +5,7 @@ class Search < Weary::Base
     @origin_airport = options[:origin_airport]
     @destination_airport = options[:destination_airport]
     @date = options[:date] ? Date.parse(options[:date]) : Date.today.tomorrow.tomorrow
-    @return_date = options[:return_date] ? Date.parse(options[:return_date]) : Date.today.tomorrow.tomorrow.tomorrow
+    @return_date = options[:return_date].present? ? Date.parse(options[:return_date]) : Date.today.tomorrow.tomorrow.tomorrow
     @round_trip = options[:round_trip]
   end
   
