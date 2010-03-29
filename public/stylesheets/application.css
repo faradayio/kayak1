@@ -151,10 +151,6 @@ ol.itineraries>li dl dd.segmentation {
   display: none;
 }
 
-ol.itineraries>li dl dd.cost {
-  display: none;
-}
-
 ol.itineraries>li ol.legs {
   list-style: none;
 }

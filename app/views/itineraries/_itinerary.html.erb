@@ -1,6 +1,4 @@
 <dl class="itinerary">
-  <dt>Cost</dt>
-  <dd class="cost currency"><%=number_to_currency (Offset.new(itinerary.emission).price + Float(itinerary.price)) %></dd>
   <dt>Price</dt>
   <dd class="price currency"><%= link_to_itinerary_price itinerary %></dd>
   <dt>Emission</dt>
