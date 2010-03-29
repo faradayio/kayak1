@@ -83,13 +83,13 @@ ol.itineraries>li.best {
   border-color: #ABCE84;
 }
 
-ol.itineraries>li dl {
+ol.itineraries>li>dl {
   overflow: auto;
   background: #eee;
   border-bottom: 1px solid #ccc;
 }
 
-ol.itineraries>li.best dl {
+ol.itineraries>li.best>dl {
   background: #C2EA96;
   border-color: #ABCE84;
 }
@@ -98,60 +98,60 @@ ol.itineraries>li dl dt {
   display: none;
 }
 
-ol.itineraries>li dl dd {
+ol.itineraries>li>dl>dd {
   padding: 10px;
   min-height: 25px;
 }
 
-ol.itineraries>li.best dl dd {
+ol.itineraries>li.best>dl>dd {
   border-color: #ABCE84 !important;
 }
 
-ol.itineraries>li dl dd.price {
+ol.itineraries>li>dl>dd.price {
   float: left;
   width: 80px;
   border-right: 1px solid #ccc;
 }
 
-ol.itineraries>li dl dd.price:before {
+ol.itineraries>li>dl>dd.price:before {
   content: '$';
   padding-right: 3px;
 }
 
-ol.itineraries>li dl dd.price a {
+ol.itineraries>li>dl>dd.price a {
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
 }
 
-ol.itineraries>li dl dd.emission {
+ol.itineraries>li>dl>dd.emission {
   float: left;
   width: 100px;
   border-right: 1px solid #ccc;
 }
 
-ol.itineraries>li dl dd.emission strong {
+ol.itineraries>li>dl>dd.emission>strong {
   font-size: 14px;
   line-height: 17px;
   color: #333;
 }
 
-ol.itineraries>li dl dd.airline {
+ol.itineraries>li>dl>dd.airline {
   float: left;
   width: 150px;
   border-right: 1px solid #ccc;
   margin: 0 10px 0 0;
 }
 
-ol.itineraries>li dl dd.airline img {
+ol.itineraries>li>dl>dd.airline img {
   vertical-align: middle;
   border: 1px solid #ccc;
 }
 
-ol.itineraries>li dl dd.stops {
+ol.itineraries>li>dl>dd.stops {
 }
 
-ol.itineraries>li dl dd.segmentation {
+ol.itineraries>li>dl>dd.segmentation {
   display: none;
 }
 
@@ -181,36 +181,81 @@ ol.itineraries>li.best ol.segments li {
   border-color: #C2EA96;
 }
 
-ol.itineraries>li ol.segments li .emission {
+ol.itineraries>li ol.segments li dl {
+  padding-left: 70px;
+}
+
+ol.itineraries>li ol.segments li dl dd.time {
+  float: left;
+  width: 70px;
+  color: gray;
+  text-transform: lowercase;
+  display: none;
+}
+
+ol.itineraries>li ol.legs>li ol.segments>li dd.time span:before {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: bold;
+  color: silver;
+}
+
+ol.itineraries>li ol.legs>li:first-child ol.segments>li:first-child dd.departure span:before { content: "\2197"; }
+ol.itineraries>li ol.legs>li:first-child ol.segments>li:last-child dd.arrival span:before { content: "\2198"; }
+ol.itineraries>li ol.legs>li:last-child ol.segments>li:first-child dd.departure span:before { content: "\2196"; }
+ol.itineraries>li ol.legs>li:last-child ol.segments>li:last-child dd.arrival span:before { content: "\2199"; }
+
+ol.itineraries>li ol.legs>li:first-child ol.segments>li:first-child dl,
+ol.itineraries>li ol.legs>li:first-child ol.segments>li:last-child dl,
+ol.itineraries>li ol.legs>li:last-child ol.segments>li:first-child dl,
+ol.itineraries>li ol.legs>li:last-child ol.segments>li:last-child dl {
+  padding-left: 0;
+}
+
+
+ol.itineraries>li ol.segments>li:first-child dd.departure,
+ol.itineraries>li ol.segments>li:last-child dd.arrival
+{
+  display: block;
+}
+
+ol.itineraries>li ol.segments li dl dd.emission {
   float: left;
   width: 50px;
   color: gray;
 }
 
-ol.itineraries>li ol.segments li .origin {
+ol.itineraries>li ol.segments li dl dd.endpoints {
+  display: inline;
+}
+
+ol.itineraries>li ol.segments li dl dd.endpoints .origin {
   float: left;
   width: 50px;
 }
 
-ol.itineraries>li ol.segments li .aircraft {
+ol.itineraries>li ol.segments li dl dd.aircraft {
   color: gray;
   padding-left: 10px;
+  display: inline;
 }
 
-ol.itineraries>li ol.segments li .aircraft:before {
+ol.itineraries>li ol.segments li dl dd.aircraft span:before {
   content: "\2708";
   font-size: 16px;
   line-height: 16px;
 }
 
-ol.itineraries>li ol.segments li a {
+ol.itineraries>li ol.segments li dl dd.methodology {
   float: right;
-  display: block;
   width: 100px;
-  color: inherit;
   font-size: 9px;
   text-transform: uppercase;
   text-align: right;
+}
+
+ol.itineraries>li ol.segments li dl dd.methodology a {
+  display: block;
   color: gray;
 }
 
