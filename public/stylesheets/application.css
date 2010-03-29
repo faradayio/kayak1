@@ -49,6 +49,10 @@ h2 {
   margin: 20px 0;
 }
 
+h2 .date {
+  color: silver;
+}
+
 #content {
   padding: 0 40px;
 }

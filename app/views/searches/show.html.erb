@@ -1,4 +1,10 @@
-<h2><%= @title = "#{@search.origin_airport.upcase} to #{@search.destination_airport.upcase}" %></h2>
+<h2>
+  <%= @title = "#{@search.origin_airport.upcase} to #{@search.destination_airport.upcase}" %>
+  <span class="depart_date date">on <%= @search.date.to_formatted_s :date_with_day_name %></span>
+  <% if @search.round_trip %>
+  <span class="return_date date">returning <%= @search.return_date.to_formatted_s :date_with_day_name %></span>
+  <% end %>
+</h2>
 
 <%= render :partial => 'itineraries/ol', :locals => { :itineraries => @itineraries } %>
 
