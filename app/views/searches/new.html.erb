@@ -1,2 +1,12 @@
 <p class="intro">Make flight searches using <%= link_to 'Kayak', 'http://kayak.com' %>'s engine and see a climate impact estimate with each option.</p>
 <%= render :partial => 'form', :locals => { :search => @search } %>
+
+<% content_for :bottom do %>
+<script type="text/javascript">
+  document.observe('dom:loaded', respectRoundTripCheckbox);
+  $('round_trip').observe('change', respectRoundTripCheckbox);
+  function respectRoundTripCheckbox() {
+      $$('.return_date').invoke(($F('round_trip')) ? 'show' : 'hide');
+  }
+</script>
+<% end %>

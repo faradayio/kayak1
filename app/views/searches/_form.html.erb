@@ -6,12 +6,19 @@
       <dd class="airport origin_airport"><%= text_field_tag :origin_airport, nil, :tabindex => 1 %></dd>
       <dt class="destination_airport"><label for="destination_airport">Ending airport code</label></dt>
       <dd class="destination_airport airport"><%= text_field_tag :destination_airport, nil, :tabindex => 2 %></dd>
+      <dt class="round_trip boolean">Trips</dt>
+      <dd class="round_trip"><%= check_box_tag :round_trip, 1, false, :tabindex => 3 %> <label for="round_trip">Round trip?</label></dd>
       <dt class="date"><label for="date">Date</label></dt>
       <dd class="date">
-        <%= text_field_tag :date, nil, :tabindex => 3 %>
+        <%= text_field_tag :date, nil, :tabindex => 4 %>
+        <p class="assistance">mm/dd/yyyy</p>
+      </dd>
+      <dt class="return_date"><label for="return_date">Return date</label></dt>
+      <dd class="return_date">
+        <%= text_field_tag :return_date, nil, :tabindex => 5 %>
         <p class="assistance">mm/dd/yyyy</p>
       </dd>
     </dl>
-    <p><%= submit_tag 'Search', :tabindex => 4 %></p>
+    <p><%= submit_tag 'Search', :tabindex => 6 %></p>
   </fieldset>
 <% end %>

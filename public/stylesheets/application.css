@@ -136,6 +136,7 @@ ol.itineraries>li dl dd.airline {
   float: left;
   width: 150px;
   border-right: 1px solid #ccc;
+  margin: 0 10px 0 0;
 }
 
 ol.itineraries>li dl dd.airline img {
@@ -144,8 +145,6 @@ ol.itineraries>li dl dd.airline img {
 }
 
 ol.itineraries>li dl dd.stops {
-  float: left;
-  width: 150px;
 }
 
 ol.itineraries>li dl dd.segmentation {
@@ -154,6 +153,18 @@ ol.itineraries>li dl dd.segmentation {
 
 ol.itineraries>li dl dd.cost {
   display: none;
+}
+
+ol.itineraries>li ol.legs {
+  list-style: none;
+}
+
+ol.itineraries>li ol.legs>li {
+  border-bottom: 1px solid #ccc;
+}
+
+ol.itineraries>li ol.legs>li:last-child {
+  border: none;
 }
 
 ol.itineraries>li ol.segments {
@@ -209,6 +220,16 @@ ol.itineraries>li ol.segments li+li+li+li .origin {       padding-left: 150px; }
 ol.itineraries>li ol.segments li+li+li+li+li .origin {    padding-left: 200px; }
 ol.itineraries>li ol.segments li+li+li+li+li+li .origin { padding-left: 250px; }
 
+
+form fieldset dl dd.round_trip {
+  position: absolute;
+  margin-top: -50px;
+  padding: 0;
+  width: 200px;
+  border: none;
+  margin-left: 310px;
+}
+
 form fieldset {
   border: none;
 }
@@ -232,6 +253,10 @@ form fieldset dl dt {
 form fieldset dl dt.label, form fieldset dl dt label {
   display: block;
   font-size: 14px;
+}
+
+form fieldset dl dt.boolean {
+  display: none;
 }
 
 form fieldset dl dd {

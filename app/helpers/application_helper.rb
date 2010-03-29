@@ -3,12 +3,24 @@ module ApplicationHelper
     image_tag "http://www.kayak.com/v306/images/air/#{code.to_s.upcase}.gif", :alt => nil
   end
   
-  def intermediation(itinerary)
-    airports = itinerary.nodes
-    if airports.tap(&:pop).tap(&:shift).empty?
-      "non-stop"
-    else
-      "#{pluralize airports.length, 'stop'} (via #{ airports.to_sentence})"
+  def intermediation(trip)
+    case trip
+    when Itinerary
+      if trip.legs.length == 1
+        intermediation trip.legs.first
+      else
+        if trip.legs.map { |leg| leg.nodes.tap(&:pop).tap(&:shift).to_set }.uniq.length == 1
+          "#{intermediation trip.legs.first} both ways"
+        else
+          "#{intermediation trip.legs.first} there, #{intermediation trip.legs.last} back"
+        end
+      end
+    when Leg
+      if trip.stops == 0
+        "non-stop"
+      else
+        "#{pluralize trip.stops, 'stop'} (via #{ trip.nodes.tap(&:pop).tap(&:shift).to_sentence})"
+      end
     end
   end
   

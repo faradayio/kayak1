@@ -4,12 +4,12 @@ class SearchesController < ApplicationController
   end
   
   def create
-    @search = Search.new(params.symbolize_keys.slice(:origin_airport, :destination_airport, :date))
+    @search = Search.new(params.symbolize_keys.slice(:origin_airport, :destination_airport, :date, :round_trip, :return_date))
     if ENV['FAKE'] == 'true'
       xml = open(File.join(Rails.root, 'doc', 'kayak_response.xml'))
     else
       @search.perform!
-      sleep 3
+      sleep 5
       xml = @search.itineraries.body
     end
     @itineraries = Nokogiri::XML(xml).css('searchresult trips trip').to_a.map { |node| Itinerary.from_node node }[0..(RESULTS_TO_FETCH - 1)]
