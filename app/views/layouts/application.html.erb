@@ -9,7 +9,7 @@
   <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
 </head>
 <body>
-  <h1>Careplane</h1>
+  <h1><%= link_to_unless_current 'Careplane', root_path %></h1>
   <div id="content">
   <%= yield :layout %>
   </div>
