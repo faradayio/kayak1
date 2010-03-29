@@ -6,7 +6,7 @@
   <dt>Arrival time</dt>
   <dd class="arrival time"><span title="Arrival time"><%= segment.arrival.to_formatted_s(:simple_time).gsub(/^0/, '') %></span></dd>
   <dt>Emission</dt>
-  <dd class="emission"><%=number_with_delimiter segment.emission.round %> kg</span>
+  <dd class="emission"><%=number_with_delimiter segment.emission.kilograms.to(:pounds).round %> lbs</span>
   <dt>Endpoints</dt>
   <dd class="endpoints"><span class="origin"><%= segment.origin_airport %> to </span><%= segment.destination_airport %></dd>
   <dt>Aircraft</dt>

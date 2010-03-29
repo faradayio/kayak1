@@ -260,7 +260,7 @@ ol.itineraries>li ol.segments>li:last-child dd.arrival
 
 ol.itineraries>li ol.segments li dl dd.emission {
   float: left;
-  width: 50px;
+  width: 60px;
   color: gray;
 }
 
