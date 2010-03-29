@@ -36,9 +36,39 @@ body, input {
   font-family: "Brighter Planet", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 }
 
-h1 {
+.careplane {
   font-family: Handsome;
   text-transform: lowercase;
+}
+
+.totem {
+  position: relative;
+  display: block;
+  width: 1em;
+}
+
+.totem span {
+  display: block;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  top: 0;
+}
+
+.totem .heart {
+  color: rgba(255,0,0,0.2);
+}
+
+.totem .airplane {
+  -webkit-transform: rotate(-90deg); 
+  -moz-transform: rotate(-90deg);
+  font-size: 90%;
+  top: .1em;
+  margin-left: -.08em;
+  color: #eee;
+}
+
+h1 {
   background: #96CFEA;
   padding: 20px 40px;
   color: white;
@@ -364,14 +394,14 @@ form fieldset dl dd p.assistance a {
   color: inherit;
 }
 
-form fieldset input[type=submit] {
+form fieldset input[type=submit], a.button {
   background: gray;
   color: white;
   text-decoration: none;
   font-size: 18px;
   padding: 3px 12px;
   line-height: 2.5;
-  text-shadow: black 0 1px 0;
+  text-shadow: black 0 -1px 0;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
@@ -393,12 +423,15 @@ form fieldset input[type=submit] {
       rgb(100,100,100) 0%,
       rgb(200,200,200) 100%
     );
+}
+
+form fieldset input[type=submit] {   
   margin: 20px 0 20px 160px;
 }
-form fieldset input[type=submit]:hover {
+form fieldset input[type=submit]:hover, a.button:hover {
   -moz-box-shadow: 0 0 5px rgba(0,0,0,.3);
 }
-form fieldset input[type=submit]:active {
+form fieldset input[type=submit]:active, a.button:active {
   text-shadow: black 0 -1px 0;
   border-top-color: rgba(0,0,0,.5);
   border-left-color: rgba(0,0,0,.5);
@@ -447,4 +480,29 @@ fieldset.with_handle_errors dl dd.handle input
   background: #FFE430;
 }
 
+#footer {
+  overflow: auto;
+  color: gray;
+  margin: 50px 0 0;
+}
 
+#footer a {
+  color: inherit;
+}
+
+#footer p.totem {
+  font-size: 92px;
+  height: 100px;
+  float: left;
+  line-height: 92px;
+  margin-right: -20px;
+}
+
+#footer .careplane {
+  font-size: 170%;
+  line-height: 16px;
+}
+
+#footer p#attribution {
+  margin: 30px 0 0;
+}
