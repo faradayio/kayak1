@@ -9,7 +9,11 @@ class SearchesController < ApplicationController
       xml = open(File.join(Rails.root, 'doc', 'kayak_response.xml'))
     else
       @search.perform!
-      sleep 1 while @search.continue?
+      waits = 0
+      while @search.continue?
+        break if (waits += 1) > 10
+        sleep 1
+      end
       xml = @search.itineraries.body
     end
     @itineraries = Nokogiri::XML(xml).css('searchresult trips trip').to_a.map { |node| Itinerary.from_node node }[0..(RESULTS_TO_FETCH - 1)]
