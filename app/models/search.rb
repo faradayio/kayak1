@@ -36,7 +36,12 @@ class Search < Weary::Base
     resource.requires = [:_sid_, :searchid, :c, :m, :d, :s, :version, :apimode]
     resource.headers = { 'Cookie' => @cluster_cookie }
   end
-
+  
+  def continue?
+    query = Nokogiri::XML results(self.class.defaults.merge(:c => 0, :_sid_ => session_id, :searchid => @search_id)).perform.body
+    query.at('searchresult morepending') == 'true'
+  end
+  
   def itineraries
     results(self.class.defaults.merge(:_sid_ => @session_id, :searchid => @search_id)).perform
   end
