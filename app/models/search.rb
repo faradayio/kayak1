@@ -39,7 +39,7 @@ class Search < Weary::Base
   
   def continue?
     query = Nokogiri::XML results(self.class.defaults.merge(:c => 0, :_sid_ => session_id, :searchid => @search_id)).perform.body
-    query.at('searchresult morepending') == 'true'
+    query.at('searchresult morepending').content == 'true'
   end
   
   def itineraries
