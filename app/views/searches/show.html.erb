@@ -16,9 +16,9 @@ document.observe('dom:loaded', markBest);
 
 function markBest() {
   firstItinerary = $$('ol.itineraries>li').first();
-  lowestPrice = Number(firstItinerary.down('dd.price a').innerHTML);
+  lowestPrice = Number(firstItinerary.down('dd.price a').innerHTML.gsub(/[^0-9\.]/, ''));
   cheapestItinerary = $$('ol.itineraries>li').select(function(itinerary) {
-    return Number(itinerary.down('dd.price a').innerHTML) == lowestPrice;
+    return Number(itinerary.down('dd.price a').innerHTML.gsub(/[^0-9\.]/, '')) == lowestPrice;
   }).sortBy(function(itinerary) {
     return Number(itinerary.down('dd.emission strong').innerHTML.gsub(/[^0-9\.]/, ''));
   }).first();
