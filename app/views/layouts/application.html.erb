@@ -13,7 +13,6 @@
   <div id="content">
   <%= yield :layout %>
     <div id="footer">
-      <p class="totem"><span class="heart">❤</span><span class="airplane">✈</span></p>
       <p id="attribution"><%= link_to 'Brighter Planet', 'http://brighterplanet.com' %> made <%= link_to_unless_current '<span class="careplane">Careplane</span>', root_path %> to show off its shiny new <%= link_to 'carbon emission calculation web service', 'http://carbon.brighterplanet.com' %>.</p>
       <p>Want to add carbon emission estimates to your application? <%= mail_to 'info@brighterplanet.com', 'Get in touch' %>.</p>
     </div>
