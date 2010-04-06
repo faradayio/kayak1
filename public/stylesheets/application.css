@@ -239,10 +239,10 @@ ol.itineraries>li ol.legs>li ol.segments>li dd.time span:before {
   color: silver;
 }
 
-ol.itineraries>li ol.legs>li:first-child ol.segments>li:first-child dd.departure span:before { content: "\2197"; }
-ol.itineraries>li ol.legs>li:first-child ol.segments>li:last-child dd.arrival span:before { content: "\2198"; }
 ol.itineraries>li ol.legs>li:last-child ol.segments>li:first-child dd.departure span:before { content: "\2196"; }
 ol.itineraries>li ol.legs>li:last-child ol.segments>li:last-child dd.arrival span:before { content: "\2199"; }
+ol.itineraries>li ol.legs>li:first-child ol.segments>li:first-child dd.departure span:before { content: "\2197"; }
+ol.itineraries>li ol.legs>li:first-child ol.segments>li:last-child dd.arrival span:before { content: "\2198"; }
 
 ol.itineraries>li ol.legs>li:first-child ol.segments>li:first-child dl,
 ol.itineraries>li ol.legs>li:first-child ol.segments>li:last-child dl,
