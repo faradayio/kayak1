@@ -1,0 +1,3 @@
+ol.itineraries>li ol.legs>li:first-child ol.segments>li:first-child dd.departure span:before { content: none; }
+ol.itineraries>li ol.segments li dl dd.aircraft span:before { content: none; }
+

@@ -1,0 +1,17 @@
+ol.itineraries>li ol.segments li dl dd.time {
+  display: block;
+}
+
+ol.itineraries>li ol.segments li dl {
+  padding-left: 0;
+}
+
+ol.itineraries>li>dl>dd.price a {
+  zoom: 1;
+  background: gray;
+  padding: 6px 0;
+  border: 2px outset gray;
+  color: silver;
+}
+
+

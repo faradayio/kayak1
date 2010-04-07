@@ -1,0 +1,11 @@
+ol.itineraries>li {
+  zoom: 1;
+}
+
+ol.itineraries>li ol.segments li {
+  zoom: 1;
+}
+
+h1 a {
+  color: white;
+}

@@ -9,16 +9,16 @@ p, h1, h2, h3, h4, h5, h6, ol, ul, li, dl, dt, dd, input, table, td, th, fieldse
 
 
 @font-face {
-  font-family: 'Brighter Planet';
-  src: url('fonts/KievitWebPro.eot');
+  font-family: "Brighter Planet";
+  src: url("/stylesheets/fonts/KievitWebPro.eot");
   src: local('☺'), url("fonts/KievitWebPro.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Handsome';
-  src: url('fonts/HandsomePro-Thin.eot');
+  font-family: "Handsome";
+  src: url("/stylesheets/fonts/HandsomePro-Thin.eot");
   src: local('☺'), url("fonts/HandsomePro-Thin.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
@@ -73,6 +73,7 @@ h1 {
   padding: 20px 40px;
   color: white;
   font-size: 36px;
+  font-family: Handsome;
 }
 
 h1 a {
