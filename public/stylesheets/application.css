@@ -139,7 +139,7 @@ ol.itineraries>li dl dt {
 
 ol.itineraries>li>dl>dd {
   padding: 10px;
-  min-height: 25px;
+  min-height: 33px;
 }
 
 ol.itineraries>li.best>dl>dd {
@@ -152,15 +152,50 @@ ol.itineraries>li>dl>dd.price {
   border-right: 1px solid #ccc;
 }
 
-ol.itineraries>li>dl>dd.price:before {
-  content: '$';
-  padding-right: 3px;
+ol.itineraries>li>dl>dd.price a {
+  display: block;
+  font-size: 9px;
+  line-height: 9px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 4px;
+  color: #eee;
+  text-shadow: 0 -1px 0 gray;
+  text-align: center;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border-top: 1px solid rgba(255,255,255,.5);
+  border-left: 1px solid rgba(255,255,255,.5);
+  border-right: 1px solid rgba(0,0,0,.5);
+  border-bottom: 1px solid rgba(0,0,0,.5);
+  background-image: 
+    -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, rgb(100,100,100)),
+      color-stop(1, rgb(200,200,200))
+    );
+  background-image:
+    -moz-linear-gradient(
+      bottom,
+      rgb(100,100,100) 0%,
+      rgb(200,200,200) 100%
+    );
 }
 
-ol.itineraries>li>dl>dd.price a {
+ol.itineraries>li>dl>dd.price a strong {
   font-weight: bold;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 14px;
+  color: white;
+  text-shadow: 0 -1px 0 black;
+}
+
+ol.itineraries>li>dl>dd.price a strong:before {
+  content: '$';
+  padding-right: 3px;
 }
 
 ol.itineraries>li>dl>dd.emission {

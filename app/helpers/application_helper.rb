@@ -25,6 +25,6 @@ module ApplicationHelper
   end
   
   def link_to_itinerary_price(itinerary)
-    link_to number_to_currency(itinerary.price, :unit => ''), "http://kayak.com#{itinerary.url}"
+    link_to "<strong class=\"currency\">#{ number_to_currency(itinerary.price, :unit => '') }</strong> book now", "http://kayak.com#{itinerary.url}"
   end
 end
