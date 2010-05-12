@@ -31,7 +31,7 @@ function markBest() {
       return Number(itinerary.down('dd.price a').innerHTML.gsub(/[^0-9\.]/, '')) == lowestPrice;
     }).sortBy( function(itinerary) {
       footprintSavings = cheapestFootprint - Number(itinerary.down('dd.emission strong').innerHTML.gsub(/[^0-9\.]/, ''));
-      additionalCost = Number(itinerary.down('dd.price a').innerHTML) - lowestPrice;
+      additionalCost = Number(itinerary.down('dd.price a').innerHTML.gsub(/[^0-9\.]/, '')) - lowestPrice;
       return (footprintSavings / additionalCost) ;
     }).last();
     highlightAsBest(bestItinerary);
