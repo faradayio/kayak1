@@ -1,0 +1,3 @@
+nokogiri --version '1.4.1'
+conversions --version '1.4.5'
+weary --version  '0.7.2'
