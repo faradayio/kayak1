@@ -28,7 +28,7 @@ function markBest() {
     highlightAsBest(cheapestItinerary);
   } else {
     bestItinerary = $$('ol.itineraries>li').reject( function(itinerary) {
-      Number(itinerary.down('dd.price a').innerHTML) == lowestPrice;
+      Number(itinerary.down('dd.price a').innerHTML.gsub(/[^0-9\.]/, '')) == lowestPrice;
     }).sortBy( function(itinerary) {
       footprintSavings = cheapestFootprint - Number(itinerary.down('dd.emission strong').innerHTML.gsub(/[^0-9\.]/, ''));
       additionalCost = Number(itinerary.down('dd.price a').innerHTML) - lowestPrice;
