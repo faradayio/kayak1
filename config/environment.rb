@@ -21,7 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem 'oauth', :version => '0.3.6' # for weary
   config.gem 'weary', :version => '0.7.2'
   config.gem 'nokogiri', :version => '1.4.1'
-  config.gem 'conversions', :version => '1.4.4'
+  config.gem 'conversions', :version => '1.4.5'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -42,3 +42,5 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+DEFAULT_HOST_WITH_PORT = 'careplane.org'
