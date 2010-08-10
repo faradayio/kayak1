@@ -542,3 +542,8 @@ fieldset.with_handle_errors dl dd.handle input
 #footer p#attribution {
   margin: 30px 0 0;
 }
+
+p.screencast {
+  text-align: center;
+  margin: 30px 0;
+}
