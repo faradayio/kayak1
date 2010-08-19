@@ -4,7 +4,9 @@ class SearchesController < ApplicationController
   end
   
   def create
-    @search = Search.new(params.symbolize_keys.slice(:origin_airport, :destination_airport, :date, :round_trip, :return_date))
+    search = params.symbolize_keys.slice(:origin_airport, :destination_airport, :date, :round_trip, :return_date)
+    search[:date] = Date.today.tomorrow.to_formatted_s(:slashes) if Date.parse(search[:date]) < Date.today
+    @search = Search.new(search)
     if ENV['FAKE'] == 'true'
       xml = open(File.join(Rails.root, 'doc', 'kayak_response.xml'))
     else
