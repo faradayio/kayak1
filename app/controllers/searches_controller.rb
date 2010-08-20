@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
   def new
     @search = Search.new
+    render :status => 503, :file => Rails.root + 'public/503.html'
   end
   
   def create
