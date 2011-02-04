@@ -549,7 +549,5 @@ p.screencast {
 }
 
 .brighter_planet_cm1_badge {
-  position: absolute;
-  top: 24px;
-  right: 10px;
+  margin: 0 40% 10px 40%;
 }
