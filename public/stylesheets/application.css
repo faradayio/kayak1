@@ -547,3 +547,9 @@ p.screencast {
   text-align: center;
   margin: 30px 0;
 }
+
+.brighter_planet_cm1_badge {
+  position: absolute;
+  top: 24px;
+  right: 10px;
+}
